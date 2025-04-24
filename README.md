@@ -99,3 +99,7 @@ console.log('Hello from NpmRclDemo!');
 ### 1. Add more NPM packages specific to your needs.
 ### 2. Add the required *.ts files to the `scripts` folder.
 ### 3. Repeat the Install/Build tasks to incorporate the new packages.
+
+## Updating the NPM packages:
+### 1. Open the Task Runner Explorer in Visual Studio and run the `npm update` task.
+![Update Npm](update-npm.png)
