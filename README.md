@@ -2,6 +2,10 @@
 
 ## Steps to Create a New RCL Project with NPM
 ### 1. Create a new RCL project
+-  Add the Microsoft.TypeScript.MSBuild NuGet package
+-  NOTE: If you get this notification then just save the changes and reload the project:
+![Unhandled Changes](unhandled-changes.png)
+
 ### 2. Add a tsconfig.json file
 - Add a Typescript JSON Configuration File named `tsconfig.json` in the root of the project.
 ![Add Tsconfig](add-tsconfig.png)
