@@ -1,0 +1,38 @@
+﻿@inject IJSRuntime JSRuntime
+@inject MapAuthentication MapAuthentication
+
+<div id="@MapId" class="@Class" style="@Style"></div>
+
+<style>
+    .mapDiv {
+        height: 400px;
+        width: 400px;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string? Class { get; set; } = "mapDiv";
+
+    [Parameter]
+    public string? MapId { get; set; }
+
+    [Parameter]
+    public string? Style { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("azMaps.Core.addMap", MapId, MapAuthentication);
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        if (string.IsNullOrWhiteSpace(MapId))
+        {
+            MapId = Guid.NewGuid().ToString();
+        }
+    }
+}

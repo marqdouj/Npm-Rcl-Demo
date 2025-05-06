@@ -1,14 +1,19 @@
 {
+  "name": "npmrcldemo",
   "version": "1.0.0",
-  "name": "npm-rcl-demo",
   "private": true,
-  "devDependencies": {
-    "css-loader": "7.1.2",
-    "style-loader": "4.0.0",
-    "webpack": "5.99.6",
-    "webpack-cli": "6.0.1"
-  },
   "scripts": {
-    "build": "webpack"
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "azure-maps-control": "^3.6.1"
   }
 }

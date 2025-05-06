@@ -1,2 +1,2 @@
-console.log('Hello from NpmRclDemo!');
+export { Core } from './core';
 //# sourceMappingURL=index.js.map

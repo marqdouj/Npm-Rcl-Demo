@@ -1,1 +1,1 @@
-console.log('Hello from NpmRclDemo!');
+export { Core } from './core';

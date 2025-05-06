@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noEmitOnError": true,
     "removeComments": false,
     "sourceMap": true,
-    "target": "ESNext",
     "outDir": "dist",
+    "target": "ES6",
     "module": "ESNext",
-    "moduleResolution": "node"
+    "moduleResolution": "bundler",
+    "esModuleInterop": true
   },
+  "files": [ "./scripts/index.ts" ],
+  "compileOnSave": true,
   "exclude": [
     "node_modules",
     "wwwroot"
-  ],
-  "include": [
-    "scripts/**/*"
   ]
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36017.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpmRclDemo", "NpmRclDemo\NpmRclDemo.csproj", "{1629DEEE-9276-4BB6-8AEB-D1C6D7AC9410}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{437AA083-158A-4A1B-AF61-773DBC3167BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1629DEEE-9276-4BB6-8AEB-D1C6D7AC9410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1629DEEE-9276-4BB6-8AEB-D1C6D7AC9410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1629DEEE-9276-4BB6-8AEB-D1C6D7AC9410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{437AA083-158A-4A1B-AF61-773DBC3167BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{437AA083-158A-4A1B-AF61-773DBC3167BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{437AA083-158A-4A1B-AF61-773DBC3167BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{437AA083-158A-4A1B-AF61-773DBC3167BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
