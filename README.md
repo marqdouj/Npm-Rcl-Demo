@@ -16,6 +16,19 @@ NOTE: This demo will bundle the JavaScript code into a single file using 'webpac
 If you don't have an azure account, you can create a [free account](https://azure.microsoft.com/en-us/free/).
 This demo uses a [Subscription Key](https://learn.microsoft.com/en-us/azure/azure-maps/quick-demo-map-app#get-the-subscription-key-for-your-account)
 
+# Remarks
+The `Microsoft.TypeScript.MSBuild` NuGet package that is added to the solution has no bearing on the output in this project.
+It's purpose is only to view the output of the TypeScript compiler which is placed in the `dist` folder;
+which is ignored by the `dist/` entry in the `.gitignore` file. You can safely remove the package and 
+delete the `dist` folder if you don't want to view the output of the TypeScript compiler in Visual Studio.
+
+Webpack does all the heavy lifting for this project, including compiling TypeScript files using the 
+`ts-loader` and `typescript` NPM packages.
+
+NOTE: When installing the Microsoft.TypeScript.MSBuild NuGet package you may get an 'unhandled changes' notification. 
+![Unhandled Changes](unhandled-changes.png)
+If you do get this notification then just save the changes and reload the project:
+
 ## Steps
 ### 1. Create a new RCL project
 - Open Visual Studio and create a new Razor Class Library project.
@@ -43,14 +56,6 @@ This demo uses a [Subscription Key](https://learn.microsoft.com/en-us/azure/azur
   ]
 }
 ```
-Although not required, you can install the Microsoft.TypeScript.MSBuild NuGet package.
-The will include the 'node_modules' folder in the project and produce a 'dist' folder with the *.js output.
-This is useful for debugging and testing the JavaScript code in the project.
-
-NOTE: When installing the Microsoft.TypeScript.MSBuild NuGet package you may get an 'unhandled changes' notification. 
-![Unhandled Changes](unhandled-changes.png)
-If you do get this notification then just save the changes and reload the project:
-
 
 ### 3. Add a Webpack Configuration File `webpack.config.js` in the root of the project.
 ```javascript
