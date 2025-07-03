@@ -7,6 +7,15 @@
     <UserSecretsId>de229db3-3d9a-46bd-b757-a89c1ecb21f6</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="package-lock.json" />
+    <Content Remove="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="package-lock.json" />
+    <None Include="package.json" />
+  </ItemGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -22,9 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="package.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
     <Content Update="tsconfig.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
