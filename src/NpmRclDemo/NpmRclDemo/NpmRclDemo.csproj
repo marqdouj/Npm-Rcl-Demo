@@ -53,6 +53,7 @@
   <ItemGroup>
     <Content Update="tsconfig.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  <Pack>False</Pack>
     </Content>
   </ItemGroup>
 
