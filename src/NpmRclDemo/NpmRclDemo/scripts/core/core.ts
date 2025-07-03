@@ -1,5 +1,5 @@
 import * as atlas from "azure-maps-control";
-import { Security } from './security';
+import { Security } from '../security/security';
 
 export class Core {
     private static maps: Map<string, atlas.Map> = new Map<string, atlas.Map>();
