@@ -21,6 +21,10 @@ The `Microsoft.TypeScript.MSBuild` NuGet package that is added to the solution h
 It's purpose is only to view the output of the TypeScript compiler which is placed in the `dist` folder;
 which is ignored by the `dist/` entry in the `.gitignore` file. You can safely remove the package and 
 delete the `dist` folder if you don't want to view the output of the TypeScript compiler in Visual Studio.
+If you are using Visual Studio to generate a NuGet package, 
+you will need to remove `Microsoft.TypeScript.MSBuild` package and delete the `dist` folder before generating the package.
+If you do not remove the `Microsoft.TypeScript.MSBuild` package and the `dist` folder,
+the generated NuGet package will contain the `dist` folder and the TypeScript output files, which is not recommended.
 
 Webpack does all the heavy lifting for this project, including compiling TypeScript files using the 
 `ts-loader` and `typescript` NPM packages.
