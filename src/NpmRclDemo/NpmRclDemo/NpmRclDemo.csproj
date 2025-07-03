@@ -5,6 +5,18 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>de229db3-3d9a-46bd-b757-a89c1ecb21f6</UserSecretsId>
+	<Version>10.0.0-Preview1</Version>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Title>Blazor wrapper to Azure Maps SDK</Title>
+	<PackageProjectUrl>https://github.com/marqdouj/Npm-Rcl-Demo</PackageProjectUrl>
+	<PackageTags>Blazor Map Azure</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<Authors>Douglas Marquardt</Authors>
+	<Copyright>© Douglas Marquardt. All rights reserved.</Copyright>
+	<Description>Blazor wrapper to Azure Maps SDK</Description>
+	<PackageIcon>DMNuGet.png</PackageIcon>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +25,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\..\DMNuGet.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="package-lock.json" />
     <None Include="package.json" />
   </ItemGroup>

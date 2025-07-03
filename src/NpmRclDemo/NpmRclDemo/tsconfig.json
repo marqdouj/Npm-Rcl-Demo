@@ -3,14 +3,14 @@
     "noImplicitAny": true,
     "noEmitOnError": true,
     "removeComments": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "dist",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "esModuleInterop": true
   },
-  "files": [ "./scripts/index.ts" ],
+  "include": [ "scripts/**/*" ],
   "compileOnSave": true,
   "exclude": [
     "node_modules",
