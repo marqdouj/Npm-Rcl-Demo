@@ -9,9 +9,11 @@ export class Core {
         auth: Security.Authentication): void {
 
         if (this.maps.has(mapId)) {
-            console.error(`Map with ID ${mapId} already exists.`);
+            console.error(`Map with ID '${mapId}' already exists.`);
             return;
         }
+
+        console.debug(`Map with ID '${mapId}' was added.`);
 
         const map = new atlas.Map(mapId, {
             authOptions: {
@@ -28,4 +30,11 @@ export class Core {
 
         this.maps.set(mapId, map);
     }
+    public static removeMap(mapId: string): void {
+        const removed = this.maps.delete(mapId);
+        if (removed) {
+            console.debug(`Map with ID '${mapId}' was removed.`);
+        }
+    }
+
 }

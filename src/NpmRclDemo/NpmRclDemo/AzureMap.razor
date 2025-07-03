@@ -1,7 +1,8 @@
-﻿@inject IJSRuntime JSRuntime
+﻿@implements IAsyncDisposable
+@inject IJSRuntime JSRuntime
 @inject MapAuthentication MapAuthentication
 
-<div id="@MapId" class="@Class" style="@Style"></div>
+<div id="@mapId" class="@Class" style="@Style"></div>
 
 <style>
     .mapDiv {
@@ -11,6 +12,8 @@
 </style>
 
 @code {
+    private string mapId = string.Empty;
+
     [Parameter]
     public string? Class { get; set; } = "mapDiv";
 
@@ -24,15 +27,23 @@
     {
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("azMaps.Core.addMap", MapId, MapAuthentication);
+            mapId = string.IsNullOrWhiteSpace(MapId) ? "mapDemo" : MapId.Trim();
+            StateHasChanged();
+            await JSRuntime.InvokeVoidAsync("azMaps.Core.addMap", mapId, MapAuthentication);
         }
     }
 
-    protected override void OnParametersSet()
+    public async ValueTask DisposeAsync()
     {
-        if (string.IsNullOrWhiteSpace(MapId))
+        try
         {
-            MapId = Guid.NewGuid().ToString();
+            if (string.IsNullOrWhiteSpace(mapId))
+                return;
+
+            await JSRuntime.InvokeVoidAsync("azMaps.Core.removeMap", mapId);
+        }
+        catch (JSDisconnectedException)
+        {
         }
     }
 }
