@@ -19,6 +19,15 @@
 	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <Target Name="RemoveDistFiles" AfterTargets="GetTypeScriptOutputForPublishing">
+    <ItemGroup>
+      <Content Remove="dist\**" />
+      <None Include="dist\**" >
+        <Pack>False</Pack>
+      </None>
+    </ItemGroup>
+  </Target>
+	
   <ItemGroup>
     <Content Remove="package-lock.json" />
     <Content Remove="package.json" />

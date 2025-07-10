@@ -8,6 +8,8 @@ It includes a simple example of a Razor component that utilizes the azure-maps-c
 package.
 
 NOTE: This demo will bundle the JavaScript code into a single file using 'webpack'.
+Webpack does all the heavy lifting for this project, including compiling TypeScript files using the 
+`ts-loader` and `typescript` NPM packages.
 
 ## Prerequisites
 - Visual Studio 2022 or later
@@ -21,13 +23,21 @@ The `Microsoft.TypeScript.MSBuild` NuGet package that is added to the solution h
 It's purpose is only to view the output of the TypeScript compiler which is placed in the `dist` folder;
 which is ignored by the `dist/` entry in the `.gitignore` file. You can safely remove the package and 
 delete the `dist` folder if you don't want to view the output of the TypeScript compiler in Visual Studio.
-If you are using Visual Studio to generate a NuGet package, 
-you will need to remove `Microsoft.TypeScript.MSBuild` package and delete the `dist` folder before generating the package.
-If you do not remove the `Microsoft.TypeScript.MSBuild` package and the `dist` folder,
-the generated NuGet package will contain the `dist` folder and the TypeScript output files, which is not recommended.
 
-Webpack does all the heavy lifting for this project, including compiling TypeScript files using the 
-`ts-loader` and `typescript` NPM packages.
+If you are using Visual Studio to generate a NuGet package (as of `Microsoft.TypeScript.MSBuild` version `5.8.3`), 
+you will need to add this 'Target' section to the project file to ensure that the `dist` folder is **NOT** included in the package.
+See [VS Dev Issue](https://developercommunity.visualstudio.com/t/Visual-Studio-2022-should-not-package-ty/10932104)
+
+```
+  <Target Name="RemoveDistFiles" AfterTargets="GetTypeScriptOutputForPublishing">
+    <ItemGroup>
+      <Content Remove="dist\**" />
+      <None Include="dist\**" >
+        <Pack>False</Pack>
+      </None>
+    </ItemGroup>
+  </Target>
+```
 
 NOTE: When installing the Microsoft.TypeScript.MSBuild NuGet package you may get an 'unhandled changes' notification. 
 ![Unhandled Changes](unhandled-changes.png)
